@@ -1,0 +1,512 @@
+/* Estilos generales */
+* {
+    font-family: Arial, Helvetica, sans-serif; /* Fuente para todos los elementos */
+}
+
+body {
+    background: #481b5c; /* Color de fondo del cuerpo */
+}
+
+.section-padding {
+    padding: 70px 0; /* Padding para secciones con clase .section-padding */
+}
+
+/* Estilos para el carousel */
+.carousel-item {
+    height: 80vh; /* Altura del item del carousel */
+    min-height: 300px; /* Altura mínima del item del carousel */
+}
+
+.carousel-caption {
+    bottom: 200px; /* Posición de la caption del carousel */
+    z-index: 2; /* Índice z para que esté sobre otros elementos */
+    box-shadow: 0 0 20px #30005780; /* Sombra para la caption del carousel */
+}
+
+.carousel-caption h5 {
+    font-size: 45px; /* Tamaño de fuente para el título h5 en la caption */
+    text-transform: uppercase; /* Transformación a mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    margin-bottom: 25px; /* Margen inferior */
+    font-weight: bold;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* Ejemplo de sombra para efecto visual */
+}
+
+.carousel-caption p {
+    width: 60%; /* Ancho del párrafo en la caption */
+    margin: auto; /* Centrado horizontal */
+    font-size: 18px; /* Tamaño de fuente */
+    line-height: 1.9; /* Altura de línea */
+}
+
+.carousel-inner::before {
+    content: ""; /* Contenido antes del carousel inner */
+    position: absolute; /* Posición absoluta */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    top: 0; /* Desde arriba */
+    left: 0; /* Desde la izquierda */
+    background: #491b5c1e; /* Fondo semi-transparente */
+    z-index: 1; /* Índice z */
+}
+
+/* Estilos para elementos de la barra de navegación */
+.navbar {
+    background-color: #30005780 !important; /* Color de fondo para la barra de navegación */
+}
+
+.navbar-nav a {
+    font-size: 15px; /* Tamaño de fuente para enlaces en la barra de navegación */
+    text-transform: uppercase; /* Transformación a mayúsculas */
+    font-weight: 500; /* Peso de la fuente */
+    color: rgb(255, 255, 255) !important; /* Color blanco para enlaces en la barra de navegación */
+}
+
+.navbar-dark .navbar-brand {
+    color: rgb(255, 255, 255) !important; /* Color blanco para la marca en la barra de navegación */
+    font-size: 25px; /* Tamaño de fuente para la marca */
+    text-transform: uppercase; /* Transformación a mayúsculas */
+    font-weight: bold; /* Peso de la fuente */
+    letter-spacing: 2px; /* Espaciado entre letras */
+}
+
+.dropdown-menu {
+    background-color: #6a0dad56; /* Color de fondo para el menú desplegable */
+    color: rgb(255, 255, 255); /* Color blanco para el texto del menú desplegable */
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #5c0c8a; /* Color de fondo oscuro al pasar el ratón o enfocar en elementos del menú desplegable */
+    color: white !important; /* Color blanco para el texto en elementos del menú desplegable */
+}
+
+/* Estilos para botones personalizados */
+.btn-custom {
+    background-color: #800080; /* Color de fondo para botones personalizados */
+    border-color: #800080; /* Color de borde para botones personalizados */
+    color: white; /* Color del texto para botones personalizados */
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    background-color: #5c0c8a; /* Color de fondo oscuro al pasar el ratón o enfocar en botones personalizados */
+    border-color: #5c0c8a; /* Color de borde oscuro al pasar el ratón o enfocar en botones personalizados */
+    color: white; /* Color del texto al pasar el ratón o enfocar en botones personalizados */
+}
+
+.rounded-image {
+    border-radius: 10px; /* Redondea las esquinas con un radio */
+    overflow: hidden; /* Asegura que la imagen redondeada no se desborde */
+}
+
+.about {
+    background-color: #D2A3D9; /* Cambia este valor al color que desees */
+    padding: 50px; /* Ajusta el padding según sea necesario */
+}
+
+.about-text h2 {
+    font-weight: bold;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* Ejemplo de sombra para efecto visual */
+}
+
+.about-img {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 60px #481b5c; /* Añade sombra */
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.nore {
+    padding: 50px 0;
+    background: linear-gradient(to right, #481b5c, #6a0dad);
+    text-align: center;
+    color: #ffffff;
+}
+
+.nore h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nore p {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+.nore img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.nore img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+}
+
+/* Efecto de movimiento en las tarjetas */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 767px) {
+    .navbar-nav {
+        text-align: center; /* Alineación centrada para navegación en dispositivos móviles */
+    }
+    .carousel-item {
+        height: 70vh; /* Altura del item del carousel en dispositivos móviles */
+    }
+    .w-100 {
+        height: 70vh; /* Altura completa del carousel en dispositivos móviles */
+    }
+    .carousel-caption {
+        bottom: 125px; /* Posición de la caption del carousel en dispositivos móviles */
+    }
+    .carousel-caption h5 {
+        font-size: 17px; /* Tamaño de fuente para el título h5 en dispositivos móviles */
+    }
+    .carousel-caption a {
+        padding: 10px 15px; /* Padding para enlaces en la caption del carousel en dispositivos móviles */
+        font-size: 15px; /* Tamaño de fuente para enlaces en dispositivos móviles */
+    }
+    .carousel-caption p {
+        width: 100%; /* Ancho completo del párrafo en dispositivos móviles */
+        line-height: 1.5; /* Altura de línea del párrafo en dispositivos móviles */
+        font-size: 12px; /* Tamaño de fuente para el párrafo en dispositivos móviles */
+    }
+    .about-text {
+        padding-top: 50px; /* Padding superior para texto en la sección 'about' en dispositivos móviles */
+    }
+    .card {
+        margin-bottom: 30px; /* Margen inferior para las tarjetas en dispositivos móviles */
+    }
+    .section-padding {
+        padding: 50px 0; /* Padding para secciones con clase .section-padding en dispositivos móviles */
+    }
+}
+
+/* Efecto de movimiento en las tarjetas de promoción */
+.promo-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.promo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.promo-card .card-header {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.promo-card .card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.promo-card .promo-header {
+    background-color: #5B2273; /* Color púrpura oscuro */
+    color: #fff; /* Color de texto blanco */
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.promo-card .card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+
+.container h2 {
+    color: #ffffff;
+}
+
+
+.promociones {
+    background-color: #D2A3D9;
+}
+
+.boton img {
+    max-width: 370px; /* Ajusta el tamaño máximo de la imagen */
+    transition: transform 0.3s ease; /* Añade una transición suave para el movimiento */
+}
+
+.boton img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el cursor */
+}
+
+.boton {
+    margin-top: -10px; /* Ajusta este valor para mover el botón hacia arriba o hacia abajo */
+}
+
+.boton img {
+    max-width: 370px; /* Ajusta el tamaño máximo de la imagen */
+    transition: transform 0.3s ease; /* Añade una transición suave para el movimiento */
+}
+
+.boton img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el cursor */
+}
+
+.promociones h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.full-screen-image {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    overflow: hidden; /* Asegura que no haya desbordamiento */
+}
+
+.full-screen-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor sin recortarla */
+    transform: translate(-50%, -50%); /* Centra la imagen */
+}
+
+
+.bg-custom {
+    background-color: #D2A3D9; /* Color de fondo personalizado */
+}
+
+.text-custom {
+    color: #ffffff; /* Color de texto personalizado */
+}
+
+
+.faq-section {
+    background-color: #593854; /* Color de fondo de la sección */
+    padding: 50px 0; /* Padding superior e inferior */
+}
+
+.accordion-button {
+    background-color: #6a0dad; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    border: none; /* Elimina el borde */
+    margin-bottom: 10px; /* Espaciado inferior */
+    transition: background-color 0.3s ease; /* Transición de color suave */
+}
+
+.accordion-button:hover,
+.accordion-button:focus {
+    background-color: #5c0c8a; /* Color de fondo del botón al pasar el ratón o enfocar */
+    color: #ffffff; /* Color del texto del botón al pasar el ratón o enfocar */
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #5c0c8a; /* Color de fondo del botón cuando está expandido */
+    color: #ffffff; /* Color del texto del botón cuando está expandido */
+}
+
+.accordion-body {
+    background-color: #D2A3D9; /* Color de fondo del cuerpo del acordeón */
+    color: #000000; /* Color del texto del cuerpo del acordeón */
+    padding: 20px; /* Padding interior */
+    border-radius: 5px; /* Esquinas redondeadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+.faq h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bg-custom-section {
+    background-color: #D2A3D9; /* Cambia este valor al color de fondo que desees */
+}
+
+.bg-custom-card {
+    background-color: #593854; /* Cambia este valor al color de fondo de las tarjetas */
+    border: none; /* Elimina el borde de las tarjetas */
+}
+
+.bg-custom-card .card-body {
+    background-color: #5B2273; /* Asegura que el color de fondo se aplique al cuerpo de la tarjeta */
+    color: #ffffff; /* Color del texto */
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    background-color: #5c0c8a; /* Color de fondo del botón al pasar el ratón o enfocar */
+    border-color: #5c0c8a; /* Color del borde del botón al pasar el ratón o enfocar */
+    color: #ffffff; /* Color del texto del botón al pasar el ratón o enfocar */
+}
+
+.btn-custom {
+    background-color: #B775BF; /* Color de fondo del botón */
+    border-color: #B775BF; /* Color del borde del botón */
+    color: #ffffff; /* Color del texto del botón */
+}
+
+.bg-custom-form .form-control::placeholder {
+    color: #999999; /* Color del texto del placeholder */
+}
+
+.bg-custom-form .form-control {
+    background-color: #ffffff; /* Color de fondo de los campos del formulario */
+    color: #333333; /* Color del texto dentro de los campos del formulario */
+    border: 1px solid #cccccc; /* Borde de los campos del formulario */
+}
+
+.bg-custom-form {
+    background-color: #5B2273; /* Color de fondo del formulario */
+    color: #ffffff; /* Color del texto dentro del formulario */
+}
+
+.bg-custom-section {
+    background-color: #D2A3D9; /* Color de fondo de la sección */   
+    
+}
+
+.custom-footer {
+    background-color: #5B2273; /* Color de fondo personalizado para el footer  inicia footer*/   
+}
+
+.text-custom {
+    color: #D2A3D9; /* Nuevo color para las letras que eran amarillas */
+}
+
+.btn-custom {
+    background-color: #be5cc9; /* Color de fondo del botón de suscripción */
+    border-color: #6e0d79; /* Color del borde del botón de suscripción */
+    color: #333333; /* Color del texto del botón de suscripción */
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    background-color: #c75cc7; /* Color de fondo del botón al pasar el ratón o enfocar */
+    border-color: #c75cc7; /* Color del borde del botón al pasar el ratón o enfocar */
+    color: #333333; /* Color del texto del botón al pasar el ratón o enfocar */
+}
+
+
+
+
+
+
+/* estilos para el blog */
+
+/* Estilos para la sección de blog */
+.blog .article img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.blog .article header h2 {
+    font-size: 1.75rem;
+    margin-top: 1rem;
+    color: #333;
+}
+
+.blog .article p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.blog .article footer p {
+    margin-top: 1rem;
+}
+
+.blog .article footer a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.blog .article footer a:hover {
+    text-decoration: underline;
+}
+
+.blog .sidebar h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.blog .sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.blog .sidebar ul li {
+    margin-bottom: 0.5rem;
+}
+
+.blog .sidebar ul li a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.blog .sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+.blog .sidebar form .form-group {
+    margin-bottom: 1rem;
+}
+
+.blog .sidebar form .btn-primary {
+    background-color: #6f42c1;
+    border-color: #6f42c1;
+}
+
+.blog .sidebar form .btn-primary:hover {
+    background-color: #563d7c;
+    border-color: #563d7c;
+}
+
+
+
+/* Estilo para el color de fondo de la sección */
+.custom-section {
+    background-color: #D2A3D9; /* Cambia este color según tus necesidades */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Estilo para la animación de la imagen */
+.animate-img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.animate-img:hover {
+    transform: scale(1.1);
+}

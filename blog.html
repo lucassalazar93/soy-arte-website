@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soy Arte Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="img/Logo_Morado.png" alt="Logo" height="70" width="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
+                aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarS">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                        <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                            <li><a class="dropdown-item" href="#">Nuestro origen</a></li>
+                            <li><a class="dropdown-item" href="#">Historia</a></li>
+                            <li><a class="dropdown-item" href="#">Registro</a></li>
+                            <li><a class="dropdown-item" href="#">Testimonios</a></li>
+                            <li><a class="dropdown-item" href="#">Contáctanos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+                        <ul class="dropdown-menu" aria-labelledby="blogDropdown">
+                            <li><a class="dropdown-item" href="#">Estilo de vida</a></li>
+                            <li><a class="dropdown-item" href="#">Mujer</a></li>
+                            <li><a class="dropdown-item" href="#">Hijos</a></li>
+                            <li><a class="dropdown-item" href="#">Relaciones</a></li>
+                            <li><a class="dropdown-item" href="#">Nosotras</a></li>
+                            <li><a class="dropdown-item" href="#">Chatea conmigo</a></li>
+                            <li><a class="dropdown-item" href="#">Preguntas frecuentes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Mujeres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Tendencias</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="tiendaDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Tienda</a>
+                        <ul class="dropdown-menu" aria-labelledby="tiendaDropdown">
+                            <li><a class="dropdown-item" href="#">Accesorios</a></li>
+                            <li><a class="dropdown-item" href="#">Belleza</a></li>
+                            <li><a class="dropdown-item" href="#">Hogar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carrusel de Publicaciones Destacadas -->
+    <div id="blogCarousel" class="carousel slide my-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/banner (4).png" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>ENCUENTRA LA PAZ INTERIOR</h5>
+                    <p>"Sumérgete en un viaje hacia la serenidad y descubre herramientas y recursos que te guiarán hacia
+                        un estado de paz interior y equilibrio, transformando tu vida con cada paso que das."</p>
+                    <a href="#" class="btn btn-primary">Más información</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/banner (3).png" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>RELACIONES SANAS, CORAZONES FUERTES</h5>
+                    <p>"Explora cómo cultivar relaciones significativas que fortalezcan tu corazón y enriquezcan tu
+                        vida, guiándote hacia un bienestar emocional duradero y conexiones profundas."</p>
+                    <a href="#" class="btn btn-primary">Más información</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/banner (7).png" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>SABOR Y SALUD EN CADA MORDISCO</h5>
+                    <p>"Descubre nuestra colección de recetas que combinan el sabor irresistible con ingredientes
+                        saludables, diseñadas para nutrir cuerpo y alma con cada bocado. Sumérgete en la terapia
+                        culinaria y disfruta de una experiencia gastronómica que alimenta más que solo el cuerpo."</p>
+                    <a href="#" class="btn btn-primary">Más información</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/banner (1).png" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>ENCUENTRA LO QUE TE EMPODERA</h5>
+                    <p>"Explora nuestra colección de productos pensados para fortalecer tu día a día, ofreciéndote
+                        opciones que te empoderan y complementan tu vida con cada elección que haces."</p>
+                    <a href="#" class="btn btn-primary">Más información</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/banner (8).png" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>MUJERES QUE DEJAN HUELLA</h5>
+                    <p>"Descubre las historias de mujeres valientes y visionarias que desafían el status quo y marcan un
+                        camino de inspiración y cambio."</p>
+                    <a href="#" class="btn btn-primary">Más información</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#blogCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#blogCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="blog section-padding my-5">
+        <div class="container">
+            <div class="row">
+                <!-- Lista de publicaciones -->
+                <div class="col-md-8">
+                    <article class="mb-4">
+                        <header>
+                            <h2 class="text-center">UNA HISTORIA VALIENTE</h2>
+                            <p>Publicado el <time datetime="2024-07-07">7 de julio de 2024</time> por Lukas Salazar</p>
+                        </header>
+                        <section class="custom-section bg-custom-section p-4">
+                            <img src="img/valiente.png" class="img-fluid animate-img mb-4" alt="historia valiente">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quidem dolore
+                                voluptatum sint asperiores nulla expedita praesentium odit ex est, dignissimos harum ab?
+                                Numquam assumenda aliquam eveniet dolor recusandae, fugiat unde modi dignissimos. Error
+                                molestias dignissimos architecto ipsum repellendus modi, eos cupiditate laudantium
+                                officiis explicabo, mollitia impedit voluptas quas eum dolorem reprehenderit ipsa a
+                                tempora harum recusandae. Obcaecati amet, minima soluta atque blanditiis rerum.
+                                Inventore ab voluptatem ullam reprehenderit rem totam tempora sunt architecto
+                                repellendus aspernatur quis placeat quibusdam recusandae incidunt consequuntur earum at
+                                rerum autem, quasi fugit? Quia, consectetur alias eligendi magnam enim consequuntur.
+                                Neque, voluptates vero iusto sunt fugit, reiciendis nostrum eum sed similique mayores
+                                consequuntur corrupti tempora enim ab, nobis magni dolor pariatur dolorum architecto
+                                rerum quibusdam aut impedit minus hic. Amet tempore dolor et consectetur placeat commodi
+                                deserunt nemo voluptas, consequuntur voluptatibus laborum obcaecati eos quia optio modi
+                                quis, laboriosam beatae odio voluptate iure tempora debitis? Beatae dicta recusandae
+                                assumenda odit labore nobis obcaecati libero dolorem, quod quibusdam expedita officia
+                                laborum delectus nisi velit eum, aliquam eligendi sunt natus at harum explicabo tempora.
+                                Quaerat, architecto sed. Inventore ab voluptatem ullam reprehenderit rem totam tempora
+                                sunt architecto repellendus aspernatur quis placeat quibusdam recusandae incidunt
+                                consequuntur earum at rerum autem, quasi fugit? Quia, consectetur alias eligendi magnam
+                                enim consequuntur. Neque, voluptates vero iusto sunt fugit, reiciendis nostrum eum sed
+                                similique mayores consequuntur corrupti tempora enim ab, nobis magni dolor pariatur
+                                dolorum architecto rerum quibusdam aut impedit minus hic. Amet tempore dolor et
+                                consectetur placeat commodi deserunt nemo voluptas, consequuntur voluptatibus laborum
+                                obcaecati eos quia optio modi quis, laboriosam beatae odio voluptate iure tempora
+                                debitis? Beatae dicta recusandae assumenda odit labore nobis obcaecati libero dolorem,
+                                quod quibusdam expedita officia laborum delectus nisi velit eum, aliquam eligendi sunt
+                                natus at harum explicabo tempora. Quaerat, architecto sed.</p>
+                        </section>
+                        <footer>
+                            <p>Etiquetas: <a href="#">Empoderamiento Femenino</a>, <a href="#">Salud Mental</a></p>
+                        </footer>
+                    </article>
+                    <!-- Añadir más artículos aquí -->
+                </div>
+                <!-- Barra lateral -->
+                <aside class="col-md-4">
+                    <div class="mb-4">
+                        <h3>Categorías</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Estilo de Vida</a></li>
+                            <li><a href="#">Mujer</a></li>
+                            <li><a href="#">Hijos</a></li>
+                            <li><a href="#">Relaciones</a></li>
+                            <li><a href="#">Nosotras</a></li>
+                            <li><a href="#">Chatea conmigo</a></li>
+                            <li><a href="#">Preguntas frecuentes</a></li>
+                        </ul>
+                    </div>
+                    <div class="mb-4">
+                        <h3>Suscripción</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Suscribirse</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer class="custom-footer text-white pt-5 pb-4">
+        <div class="container text-center text-md-left">
+            <div class="row text-center text-md-left">
+                <!-- Información de Contacto -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-custom">Soy Arte</h5>
+                    <p>
+                        Dirección: Calle Falsa 123<br>
+                        Teléfono: +123 456 7890<br>
+                        Correo: contacto@soyarte.com
+                    </p>
+                </div>
+                <!-- Enlaces Rápidos -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-custom">Enlaces Rápidos</h5>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Inicio</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Sobre Nosotros</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Servicios</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Blog</a></p>
+                    <p><a href="#" class="text-white" style="text-decoration: none;">Contacto</a></p>
+                </div>
+                <!-- Redes Sociales -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-custom">Síguenos</h5>
+                    <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+                </div>
+                <!-- Suscripción a Newsletter -->
+                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-custom">Suscríbete</h5>
+                    <form action="#">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Tu correo electrónico"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-custom" type="button">Suscribirse</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Información Legal -->
+            <div class="row align-items-center">
+                <div class="col-md-7 col-lg-8">
+                    <p class="text-center text-md-left">© 2024 Todos los derechos reservados:
+                        <a href="#" class="text-white" style="text-decoration: none;">
+                            <strong class="text-custom">Soy Arte</strong>
+                        </a>
+                    </p>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <p class="text-center text-md-right">
+                        <a href="#" class="text-white" style="text-decoration: none;">Política de Privacidad</a> |
+                        <a href="#" class="text-white" style="text-decoration: none;">Términos y Condiciones</a>
+                    </p>
+                </div>
+            </div>
+            <!-- Créditos del Diseñador -->
+            <div class="row mt-4">
+                <div class="col-md-12 text-center">
+                    <p class="text-custom">Diseñado por Lucas Salazar</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
