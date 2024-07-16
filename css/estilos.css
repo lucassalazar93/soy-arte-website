@@ -435,10 +435,11 @@ body {
     color: #333;
 }
 
-.blog ..article p {
+.blog .article p {
     color: #555;
     line-height: 1.6;
 }
+
 
 .blog .article footer p {
     margin-top: 1rem;
