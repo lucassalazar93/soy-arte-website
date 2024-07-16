@@ -435,7 +435,7 @@ body {
     color: #333;
 }
 
-.blog .article p {
+.blog ..article p {
     color: #555;
     line-height: 1.6;
 }
@@ -493,20 +493,100 @@ body {
 
 
 
-/* Estilo para el color de fondo de la sección */
-.custom-section {
-    background-color: #D2A3D9; /* Cambia este color según tus necesidades */
-    padding: 20px;
-    border-radius: 5px;
+/* registro */
+* {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Estilo para la animación de la imagen */
-.animate-img {
+body {
+    background: #481b5c;
+    margin: 0;
+    padding: 0;
+    color: white;
+    position: relative;
+    overflow-x: hidden; /* Evitar scroll horizontal */
+}
+
+.section-padding {
+    padding: 70px 0;
+    position: relative;
+}
+
+.background-image {
+    position: fixed; /* Fijar la imagen de fondo para que ocupe todo el ancho */
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    transition: transform 0.5s ease-in-out;
+    height: 100%;
+    background: url('/mnt/data/image.png') no-repeat center center/cover; /* Ajusta la ruta según sea necesario */
+    z-index: -2; /* Asegura que la imagen esté detrás del contenido */
 }
 
-.animate-img:hover {
-    transform: scale(1.1);
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(54, 0, 85, 0.7); /* Color morado con transparencia */
+    z-index: -1; /* Asegura que la superposición esté detrás del contenido pero encima de la imagen */
+}
+
+.container {
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté encima de la imagen de fondo */
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.dob-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dob-container input {
+    width: 30%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    background-color: transparent; /* Fondo transparente para inputs */
+    color: white; /* Color blanco para el texto en los inputs */
+    border: 1px solid white; /* Borde blanco */
+}
+
+input::placeholder {
+    color: #ddd; /* Color de los placeholders */
+}
+
+.btn-custom {
+    background-color: #800080;
+    border-color: #800080;
+    color: white !important; /* Color blanco para el texto del botón */
+}
+
+.btn-custom:hover,
+.btn-custom:focus {
+    background-color: #5c0c8a;
+    border-color: #5c0c8a;
+    color: white !important; /* Color blanco para el texto del botón al pasar el ratón o enfocar */
+}
+
+.label-centered {
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+    color: white; /* Color blanco para los labels */
+}
+
+h2 {
+    margin-top: 20px;
+    color: white; /* Color blanco para el texto */
+}
+
+p {
+    color: white; /* Color blanco para el texto */
 }
