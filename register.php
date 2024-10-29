@@ -1,32 +1,35 @@
 <?php
 require 'config.php';
-
+//usamos javascript para enviar un mensaje emergente con alert, redirigimos automaticamente despues de 3 segundos.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre_completo = $conn->real_escape_string($_POST['full_name']);
-    $cedula = $conn->real_escape_string($_POST['id_number']);
-    $email = $conn->real_escape_string($_POST['email']);
-    $dob_day = $conn->real_escape_string($_POST['dob_day']);
-    $dob_month = $conn->real_escape_string($_POST['dob_month']);
-    $dob_year = $conn->real_escape_string($_POST['dob_year']);
-    $fecha_nacimiento = "$dob_year-$dob_month-$dob_day";
+    $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-    // Verificar que la cédula no esté duplicada
-    $check_cedula = "SELECT * FROM usuarios WHERE cedula='$cedula' LIMIT 1";
-    $result = $conn->query($check_cedula);
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        echo "La cédula ya está registrada.";
+        echo "<script>
+                alert('Este usuario ya está registrado.');
+                window.location.href = 'register.html';
+              </script>";
     } else {
-        $sql = "INSERT INTO usuarios (nombre_completo, cedula, fecha_nacimiento, email, contraseña) VALUES ('$nombre_completo', '$cedula', '$fecha_nacimiento', '$email', '$password')";
-
-        if ($conn->query($sql) === TRUE) {
-            echo "Registro exitoso";
+        $stmt = $conn->prepare("INSERT INTO usuarios (email, contraseña) VALUES (?, ?)");
+        $stmt->bind_param("ss", $email, $password);
+        if ($stmt->execute()) {
+            echo "<script>
+                    alert('Registro exitoso. Redirigiendo al login...');
+                    setTimeout(function() {
+                        window.location.href = 'login.html';
+                    }, 3000);
+                  </script>";
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . $conn->error;
         }
     }
-
+    $stmt->close();
     $conn->close();
 }
 ?>
