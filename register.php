@@ -1,9 +1,17 @@
 <?php
 require 'config.php';
-//usamos javascript para enviar un mensaje emergente con alert, redirigimos automaticamente despues de 3 segundos.
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);  // Limpiamos el email
+    $password = password_hash(trim($_POST['password']), PASSWORD_BCRYPT);
+
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<script>
+                alert('Formato de correo inválido.');
+                window.location.href = 'register.html';
+              </script>";
+        exit();
+    }
 
     $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = ?");
     $stmt->bind_param("s", $email);
@@ -18,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $stmt = $conn->prepare("INSERT INTO usuarios (email, contraseña) VALUES (?, ?)");
         $stmt->bind_param("ss", $email, $password);
+
         if ($stmt->execute()) {
             echo "<script>
                     alert('Registro exitoso. Redirigiendo al login...');
@@ -26,9 +35,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }, 3000);
                   </script>";
         } else {
-            echo "Error: " . $conn->error;
+            echo "<script>alert('Error en el registro: " . htmlspecialchars($conn->error) . "');</script>";
         }
     }
+
     $stmt->close();
     $conn->close();
 }
