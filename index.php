@@ -12,96 +12,106 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <!-- el nav contiene todo el menu de navegacion -->
+    <?php
+// Inicia la sesión para acceder a las variables de $_SESSION
+session_start();
 
-        <div class="container">
+// Calcula la cantidad total de productos en el carrito
+// Si no hay carrito, se define como 0
+$carrito_count = isset($_SESSION['carrito']) ? array_sum(array_column($_SESSION['carrito'], 'cantidad')) : 0;
+?>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <!-- Contenedor general para la barra de navegación -->
+    <div class="container">
 
-            <a href="#" class="navbar-brand">
-                <img src="img/Logo_Morado.png" alt="Logo" height="70" width="60">
-                <!-- Reemplaza con la ruta y tamaño adecuados -->
-            </a>
-            <!-- puesto del icono o nombre de la pagina --> <!-- enlace para el boton  -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
-                aria-controls="navbarS" aria-expanded="false" aria-label="toggle navegation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarS">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!-- Logo de la página con enlace -->
+        <a href="index.php" class="navbar-brand">
+            <img src="img/Logo_Morado.png" alt="Logo" height="70" width="60">
+        </a>
 
-                    <li class="nav-item"> <!-- botones de navegacion 6 -->
-                        <a href="#" class="nav-link">Inicio</a> <!-- 3 -->
-                    </li>
+        <!-- Botón para colapsar la barra en pantallas pequeñas -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
+            aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Menu
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="menuDropdown">
-                            <li><a class="dropdown-item" href="#">Nuestro origen</a></li> <!-- menu desplegable -->
-                            <li><a class="dropdown-item" href="#">Historia</a></li>
-                            <li><a class="dropdown-item" href="#">Registro</a></li>
-                            <li><a class="dropdown-item" href="#">Testimonios</a></li>
-                            <li><a class="dropdown-item" href="#">Contactanos</a></li>
-                        </ul>
-                    </li>
+        <!-- Contenido de la barra de navegación -->
+        <div class="collapse navbar-collapse" id="navbarS">
+            <!-- Lista de navegación -->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
+                <!-- Enlace a Inicio -->
+                <li class="nav-item">
+                    <a href="index.php" class="nav-link">Inicio</a>
+                </li>
 
+                <!-- Menú desplegable: Menú -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Menú
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                        <li><a class="dropdown-item" href="#">Nuestro Origen</a></li>
+                        <li><a class="dropdown-item" href="#">Historia</a></li>
+                        <li><a class="dropdown-item" href="#">Registro</a></li>
+                        <li><a class="dropdown-item" href="#">Testimonios</a></li>
+                        <li><a class="dropdown-item" href="#">Contáctanos</a></li>
+                    </ul>
+                </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Blog
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="blogDropdown"> <!-- blog desplegable -->
-                            <li><a class="dropdown-item" href="#">Estilo de vida</a></li>
-                            <li><a class="dropdown-item" href="#">mujer</a></li>
-                            <li><a class="dropdown-item" href="#">hijos</a></li>
-                            <li><a class="dropdown-item" href="#">Relaciones</a></li>
-                            <li><a class="dropdown-item" href="#">Nosotras</a></li>
-                            <li><a class="dropdown-item" href="#">Chatea conmigo</a></li>
-                            <li><a class="dropdown-item" href="#">Preguntas frecuentes</a></li>
-                        </ul>
-                    </li>
+                <!-- Enlace a Mujeres -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Mujeres</a>
+                </li>
 
+                <!-- Enlace a Tendencias -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Tendencias</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Mujeres</a> <!-- 4 -->
-                    </li>
+                <!-- Menú desplegable: Tienda -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="tiendaDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Tienda
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="tiendaDropdown">
+                        <li><a class="dropdown-item" href="tienda.php">Todos los Productos</a></li>
+                        <li><a class="dropdown-item" href="tienda.php?categoria=1">Accesorios</a></li>
+                        <li><a class="dropdown-item" href="tienda.php?categoria=2">Belleza</a></li>
+                        <li><a class="dropdown-item" href="tienda.php?categoria=3">Hogar</a></li>
+                    </ul>
+                </li>
 
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Tendencias</a> <!-- 5 -->
-                    </li>
+                <!-- Enlace a Registro -->
+                <li class="nav-item">
+                    <a href="register.html" class="nav-link">Registro</a>
+                </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="tiendaDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Tienda
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="tiendaDropdown">
-                            <li><a class="dropdown-item" href="tienda.php">Todos los Productos</a></li>
-                            <li><a class="dropdown-item" href="tienda.php?categoria=1">Accesorios</a></li>
-                            <li><a class="dropdown-item" href="tienda.php?categoria=2">Belleza</a></li>
-                            <li><a class="dropdown-item" href="tienda.php?categoria=3">Hogar</a></li>
-                        </ul>
-                    </li>
-                    
+                <!-- Enlace a Login -->
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">Login</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a href="register.html" class="nav-link">Registro</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="login.html" class="nav-link">Login</a>
-                    </li>
+                <!-- Botón del Carrito -->
+                <li class="nav-item">
+                    <a href="carrito.php" class="nav-link btn btn-outline-primary position-relative">
+                        🛒 Carrito
+                        <!-- Muestra el contador solo si hay productos en el carrito -->
+                        <?php if ($carrito_count > 0): ?>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                <?php echo $carrito_count; ?>
+                            </span>
+                        <?php endif; ?>
+                    </a>
+                </li>
 
-                </ul>
-
-            </div>
-
+            </ul>
         </div>
-
-    </nav> <!-- aqui finaliza el menu de navegacion -->
+    </div>
+</nav>
+ <!-- aqui finaliza el menu de navegacion -->
 
     <div id="caruselE" class="carousel slide" data-bs-ride="carousel">
         <!-- aqui va el carrusel botones de funcion-flechas -->

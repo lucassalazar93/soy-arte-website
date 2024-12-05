@@ -591,3 +591,41 @@ h2 {
 p {
     color: white; /* Color blanco para el texto */
 }
+
+/* Estilo general del botón del carrito */
+.nav-item .nav-link.btn {
+    background-color: #800080 !important; /* Cambia el fondo */
+    border: 2px solid #800080 !important; /* Cambia el borde */
+    color: white !important; /* Cambia el color del texto */
+    font-size: 1rem; /* Ajusta el tamaño de fuente */
+    padding: 10px 15px; /* Ajusta el espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Añade una animación suave */
+}
+
+/* Estilo del botón al pasar el ratón */
+.nav-item .nav-link.btn:hover {
+    background-color: #5c0c8a !important; /* Color más oscuro al pasar el ratón */
+    border-color: #5c0c8a !important;
+    color: #fff !important; /* Asegura el color blanco */
+}
+
+/* Estilo del contador del carrito */
+.nav-item .nav-link.btn .badge {
+    background-color: #ff0000 !important; /* Fondo rojo */
+    color: white !important; /* Texto blanco */
+    font-size: 0.8rem; /* Tamaño del texto */
+    padding: 5px 8px; /* Espaciado interno */
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    border-radius: 50%; /* Hacer el contador circular */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+    transform: translate(50%, -50%); /* Asegura la posición */
+}
+
+/* Efecto de animación en el contador al pasar el ratón */
+.nav-item .nav-link.btn:hover .badge {
+    transform: scale(1.2); /* Escala ligeramente el contador */
+    transition: transform 0.2s ease-in-out;
+}

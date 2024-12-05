@@ -1,20 +1,21 @@
 <?php
+// Iniciar la sesión para manejar el carrito
 session_start();
 
-// Verificar si ya existe el carrito en la sesión
+// Inicializar el carrito en la sesión si no existe
 if (!isset($_SESSION['carrito'])) {
-    $_SESSION['carrito'] = []; // Inicializar el carrito si no existe
+    $_SESSION['carrito'] = [];
 }
 
 // Función para agregar un producto al carrito
 function agregarAlCarrito($producto_id, $nombre, $precio, $cantidad) {
     foreach ($_SESSION['carrito'] as &$item) {
         if ($item['producto_id'] == $producto_id) {
-            $item['cantidad'] += $cantidad; // Si ya está en el carrito, solo aumenta la cantidad
+            $item['cantidad'] += $cantidad; // Incrementar la cantidad si ya está en el carrito
             return;
         }
     }
-    // Si no está en el carrito, agregarlo como nuevo producto
+    // Agregar un nuevo producto al carrito
     $_SESSION['carrito'][] = [
         'producto_id' => $producto_id,
         'nombre' => $nombre,
@@ -27,38 +28,45 @@ function agregarAlCarrito($producto_id, $nombre, $precio, $cantidad) {
 function eliminarDelCarrito($producto_id) {
     foreach ($_SESSION['carrito'] as $key => $item) {
         if ($item['producto_id'] == $producto_id) {
-            unset($_SESSION['carrito'][$key]); // Eliminar el producto
+            unset($_SESSION['carrito'][$key]); // Eliminar el producto encontrado
             break;
         }
     }
 }
 
-// Función para actualizar la cantidad de un producto
+// Función para actualizar la cantidad de un producto en el carrito
 function actualizarCantidad($producto_id, $cantidad) {
     foreach ($_SESSION['carrito'] as &$item) {
         if ($item['producto_id'] == $producto_id) {
-            $item['cantidad'] = $cantidad; // Actualizar la cantidad
+            $item['cantidad'] = max(1, $cantidad); // Asegurar que la cantidad sea al menos 1
             return;
         }
     }
 }
 
-// Manejar acciones del formulario
+// Manejar las acciones del formulario
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['action'])) {
-        switch ($_POST['action']) {
-            case 'agregar':
-                agregarAlCarrito($_POST['producto_id'], $_POST['nombre'], $_POST['precio'], $_POST['cantidad']);
-                break;
-            case 'eliminar':
-                eliminarDelCarrito($_POST['producto_id']);
-                break;
-            case 'actualizar':
-                actualizarCantidad($_POST['producto_id'], $_POST['cantidad']);
-                break;
-        }
+    $action = $_POST['action'] ?? '';
+
+    switch ($action) {
+        case 'agregar': // Acción para agregar un producto al carrito
+            agregarAlCarrito(
+                $_POST['producto_id'],
+                $_POST['nombre'],
+                $_POST['precio'],
+                $_POST['cantidad']
+            );
+            break;
+        case 'eliminar': // Acción para eliminar un producto
+            eliminarDelCarrito($_POST['producto_id']);
+            break;
+        case 'actualizar': // Acción para actualizar la cantidad
+            actualizarCantidad($_POST['producto_id'], $_POST['cantidad']);
+            break;
     }
-    header('Location: carrito.php'); // Redirigir para evitar reenvíos de formulario
+
+    // Redirigir para evitar que el formulario se reenvíe al recargar la página
+    header('Location: carrito.php');
     exit;
 }
 ?>
@@ -75,6 +83,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="container mt-5">
         <h1 class="text-center mb-4">Carrito de Compras</h1>
+        
+        <!-- Mostrar el contenido del carrito -->
         <?php if (!empty($_SESSION['carrito'])): ?>
             <table class="table table-bordered">
                 <thead>
@@ -87,12 +97,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $total = 0; ?>
+                    <?php $total = 0; // Variable para calcular el total del carrito ?>
                     <?php foreach ($_SESSION['carrito'] as $item): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($item['nombre']); ?></td>
                             <td>$<?php echo number_format($item['precio'], 2); ?></td>
                             <td>
+                                <!-- Formulario para actualizar la cantidad -->
                                 <form method="POST" style="display:inline-block;">
                                     <input type="hidden" name="action" value="actualizar">
                                     <input type="hidden" name="producto_id" value="<?php echo $item['producto_id']; ?>">
@@ -102,6 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </td>
                             <td>$<?php echo number_format($item['precio'] * $item['cantidad'], 2); ?></td>
                             <td>
+                                <!-- Formulario para eliminar un producto -->
                                 <form method="POST" style="display:inline-block;">
                                     <input type="hidden" name="action" value="eliminar">
                                     <input type="hidden" name="producto_id" value="<?php echo $item['producto_id']; ?>">
@@ -120,11 +132,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </tfoot>
             </table>
         <?php else: ?>
+            <!-- Mensaje cuando el carrito está vacío -->
             <p class="text-center">El carrito está vacío.</p>
         <?php endif; ?>
+
+        <!-- Botón para volver a la tienda -->
         <div class="text-center mt-4">
             <a href="tienda.php" class="btn btn-secondary">Volver a la Tienda</a>
         </div>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

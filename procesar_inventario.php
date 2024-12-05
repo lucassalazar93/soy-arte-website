@@ -16,7 +16,7 @@ $stmt->bind_param("ssdii", $nombre, $descripcion, $precio, $stock, $categoria_id
 
 if ($stmt->execute()) {
     echo "Producto agregado exitosamente";
-    header("Location: inventario.html");
+    header("Location: inventario.php");
 } else {
     echo "Error: " . $stmt->error;
 }
