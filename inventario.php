@@ -5,16 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Inventario</title>
-    <link rel="stylesheet" href="css/inventario.css"> <!-- Asegúrate de que este archivo exista -->
+    <!-- Fuentes y estilos -->
+    <link rel="stylesheet" href="css/inventario.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>Gestión de Inventario - Tienda Soy Arte</h1>
+    <!-- Encabezado principal -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Gestión de Inventario-SOY ARTE</h1>
+            <p class="hero-subtitle">Discriminacion de inventario para la tienda</p>
+        </div>
+    </header>
 
-    <!-- Formulario para agregar productos -->
+    <!-- Sección: Agregar Producto -->
     <section id="formulario-producto">
-        <h2>Agregar Producto</h2>
-        <form action="procesar_inventario.php" method="POST">
+        <h2 class="section-title">Agregar Producto</h2>
+        <form action="procesar_inventario.php" method="POST" enctype="multipart/form-data">
             <label for="nombre">Nombre del Producto:</label>
             <input type="text" id="nombre" name="nombre" required>
 
@@ -30,9 +38,7 @@
             <label for="categoria">Categoría:</label>
             <select id="categoria" name="categoria_id" required>
                 <?php
-                include 'config.php'; // Asegúrate de que este archivo incluye la conexión $conn
-
-                // Consulta las categorías disponibles
+                include 'config.php';
                 $query = "SELECT id, nombre FROM categorias";
                 $result = $conn->query($query);
 
@@ -46,16 +52,19 @@
                 ?>
             </select>
 
-            <button type="submit">Agregar Producto</button>
+            <label for="imagen">Imagen del Producto:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*">
+
+            <button type="submit" class="btn-submit">Agregar Producto</button>
         </form>
     </section>
 
     <hr>
 
-    <!-- Tabla para mostrar productos -->
+    <!-- Sección: Tabla de Productos -->
     <section id="listado-productos">
-        <h2>Productos en Inventario</h2>
-        <table border="1">
+        <h2 class="section-title">Productos en Inventario</h2>
+        <table class="inventory-table">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -71,7 +80,6 @@
             </thead>
             <tbody>
                 <?php
-                // Consulta para obtener los productos y sus categorías
                 $queryProductos = "SELECT p.product_id, p.nombre, p.descripcion, p.precio, p.stock, 
                                           c.nombre AS categoria, 
                                           p.`fecha_creación` AS fecha_creacion, 
@@ -95,11 +103,11 @@
                                 <td>" . htmlspecialchars($row['fecha_creacion']) . "</td>
                                 <td>" . htmlspecialchars($row['fecha_actualizacion']) . "</td>
                                 <td>
-                                    <form method='POST' action='editar_producto.php' style='display:block; margin-bottom: 5px;'>
+                                    <form method='POST' action='editar_producto.php' class='action-form'>
                                         <input type='hidden' name='product_id' value='" . htmlspecialchars($row['product_id']) . "'>
                                         <button type='submit' class='btn-editar'>Editar</button>
                                     </form>
-                                    <form method='POST' action='eliminar_producto.php' style='display:block;'>
+                                    <form method='POST' action='eliminar_producto.php' class='action-form'>
                                         <input type='hidden' name='product_id' value='" . htmlspecialchars($row['product_id']) . "'>
                                         <button type='submit' class='btn-eliminar'>Eliminar</button>
                                     </form>

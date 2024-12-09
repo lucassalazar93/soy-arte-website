@@ -1,0 +1,132 @@
+/* Fondo general */
+body {
+    background-color: #fff0f6; /* Rosa suave */
+    font-family: 'Poppins', sans-serif;
+    color: #5a5a5a; /* Gris oscuro suave */
+    margin: 0;
+    padding: 0;
+}
+
+/* Card principal */
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #fbcfe8; /* Bordes suaves rosados */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Encabezado del carrito */
+.card-header {
+    background: linear-gradient(90deg, #ff99cc, #ffaadd); /* Gradiente femenino */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 1rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* Tabla */
+.table-hover tbody tr:hover {
+    background-color: #ffe4f2; /* Fondo rosado para hover */
+}
+
+.table-dark th {
+    background: #ff99cc; /* Rosado fuerte */
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    border: none;
+}
+
+/* Botones */
+.btn-outline-primary {
+    color: #ff66a1;
+    border-color: #ff66a1;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+.btn-outline-primary:hover {
+    background-color: #ff66a1;
+    color: white;
+    border-color: #ff66a1;
+}
+
+.btn-outline-danger {
+    color: #ff4d88;
+    border-color: #ff4d88;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+.btn-outline-danger:hover {
+    background-color: #ff4d88;
+    color: white;
+    border-color: #ff4d88;
+}
+
+/* Mensaje de carrito vacío */
+.alert-warning {
+    background-color: #ffe6f0; /* Rosado pastel */
+    color: #d6336c; /* Rosa oscuro */
+    border-radius: 15px;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón central */
+.text-center .btn {
+    background-color: #ff66a1;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.8rem 1.5rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.text-center .btn:hover {
+    background-color: #ff4d88;
+    color: white;
+}
+
+/* Subtítulos o texto destacado */
+.fw-bold {
+    color: #ff66a1;
+    font-weight: bold;
+}
+
+/* Inputs */
+input[type="number"] {
+    border: 1px solid #ffcfe0;
+    border-radius: 10px;
+    padding: 0.5rem;
+    width: 70px;
+    text-align: center;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #f04be3;
+    box-shadow: 0 0 5px rgba(255, 102, 161, 0.5);
+}
+
+/* Bordes de las tablas */
+.table-hover tbody td,
+.table-hover tbody th {
+    border: none;
+}
+
+tfoot td {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ff4d88;
+}

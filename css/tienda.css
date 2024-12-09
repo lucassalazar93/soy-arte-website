@@ -1,0 +1,471 @@
+/* General */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ae00a8;
+    color: #8c008f7f;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #07c36b, #03b438);
+    animation: background-move 8s infinite alternate;
+    color: rgb(234, 18, 18);
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes background-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+header .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: white;
+    letter-spacing: 1px;
+}
+
+header .menu a {
+    color: white;
+    margin: 0 15px;/* General Styles */
+    /* Configuración general del cuerpo: fuentes, colores y comportamiento de scroll */
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fff5fa; /* Fondo rosa claro */
+        color: #1d154b; /* Texto en un tono púrpura */
+        line-height: 1.6;
+        scroll-behavior: smooth; /* Movimiento suave al hacer scroll */
+    }
+    
+    /* Header Styles */
+    /* Estilo general del encabezado (header) */
+    header {
+        background: linear-gradient(135deg, #ffc1e3, #ff9dea); /* Gradiente de fondo */
+        animation: background-move 8s infinite alternate; /* Animación del gradiente */
+        color: white;
+        text-align: center;
+        padding: 20px 0; /* Espaciado superior e inferior */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra debajo del encabezado */
+    }
+    
+    /* Animación para mover el gradiente del encabezado */
+    @keyframes background-move {
+        0% {
+            background-position: 0% 50%;
+        }
+        100% {
+            background-position: 100% 50%;
+        }
+    }
+    
+    /* Estilo del logo dentro del encabezado */
+    header .logo {
+        font-family: 'Playfair Display', serif; /* Fuente elegante */
+        font-size: 2.8rem;
+        color: white; /* Color blanco para el logo */
+        letter-spacing: 1px; /* Espaciado entre letras */
+    }
+    
+    /* Enlaces dentro del menú del encabezado */
+    header .menu a {
+        color: white;
+        margin: 0 15px; /* Espaciado entre enlaces */
+        text-decoration: none;
+        font-weight: bold; /* Texto en negrita */
+        font-size: 1.1rem;
+        transition: color 0.3s ease; /* Transición suave en el color */
+    }
+    
+    /* Efecto hover para los enlaces del menú */
+    header .menu a:hover {
+        color: #ffeaf5; /* Color más claro al pasar el mouse */
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.9); /* Sombra al pasar el mouse */
+    }
+    
+    /* Hero Section */
+    /* Sección de introducción con estilo destacado */
+    .hero {
+        text-align: center; /* Centrar el contenido */
+        background: linear-gradient(135deg, #ffe4f1, #f8d0f4); /* Fondo degradado */
+        color: #912293b3; /* Texto púrpura */
+        padding: 50px 20px;
+        border-radius: 20px; /* Bordes redondeados */
+        margin: 20px auto;
+        max-width: 900px; /* Ancho máximo para limitar su tamaño */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+        position: relative;
+        overflow: hidden; /* Ocultar contenido que sobresale */
+    }
+    
+    /* Fondo decorativo en la hero */
+    .hero:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('imagenes/accesorios-bg.jpg') no-repeat center; /* Imagen de fondo */
+        background-size: cover;
+        opacity: 0.1; /* Hacer la imagen translúcida */
+        z-index: -1;
+    }
+    
+    /* Título de la hero */
+    .hero h2 {
+        font-family: 'Playfair Display', serif; /* Fuente elegante */
+        font-size: 3rem;
+        margin-bottom: 15px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    }
+    
+    /* Botón en la hero */
+    .hero button {
+        background-color: #ff9dea; /* Fondo rosado */
+        color: white;
+        padding: 12px 25px;
+        border-radius: 30px; /* Bordes redondeados */
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer; /* Cambia el cursor al pasar */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
+    }
+    
+    /* Efecto hover en el botón */
+    .hero button:hover {
+        background-color: #ff70c9; /* Cambia a un color más oscuro */
+        transform: scale(1.1); /* Agranda ligeramente */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
+    }
+    
+    /* Productos Section */
+    /* Contenedor de las tarjetas de productos */
+    .productos {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
+        justify-content: center; /* Centrar los elementos */
+        padding: 20px;
+        gap: 30px; /* Espaciado entre tarjetas */
+        animation: fadeIn 1s ease-in; /* Animación de entrada */
+    }
+    
+    /* Contenedor para las tarjetas con efecto 3D */
+    .tarjeta-contenedor {
+        perspective: 1200px; /* Define la distancia de perspectiva */
+        width: 280px;
+        height: 360px;
+        cursor: pointer; /* Cambia el cursor al pasar */
+    }
+    
+    /* Estilo general de la tarjeta */
+    .tarjeta {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d; /* Habilita el efecto 3D */
+        transform: rotateY(0deg); /* Sin rotación inicial */
+        transition: transform 0.8s ease-in-out; /* Transición suave */
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    
+    /* Efecto hover en la tarjeta */
+    .tarjeta:hover {
+        transform: rotateY(180deg); /* Rota 180 grados */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra al hacer hover */
+    }
+    
+    /* Estilo de las caras de la tarjeta */
+    .tarjeta-delantera,
+    .tarjeta-trasera {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden; /* Ocultar la cara trasera cuando está de frente */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    /* Cara delantera de la tarjeta */
+    .tarjeta-delantera {
+        background-color: white;
+        color: #4a154b;
+    }
+    
+    /* Imagen en la cara delantera */
+    .tarjeta-delantera img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    }
+    
+    /* Cara trasera de la tarjeta */
+    .tarjeta-trasera {
+        background: linear-gradient(135deg, #e3c6e9, #ffeaf5);
+        transform: rotateY(180deg); /* Orientación inicial */
+        color: white;
+        padding: 25px;
+    }
+    
+    /* Footer Styles */
+    /* Estilo del pie de página */
+    footer {
+        text-align: center;
+        background: linear-gradient(135deg, #d4a1d9, #ffeaf5); /* Fondo con gradiente */
+        color: white;
+        padding: 15px 0;
+        margin-top: 30px;
+        font-size: 1rem;
+    }
+    
+    /* Estilo para los enlaces del footer */
+    footer a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+    
+    /* Efecto hover en los enlaces del footer */
+    footer a:hover {
+        color: #ffe4fa; /* Color más claro */
+        text-shadow: 0 2px 4px rgba(255, 255, 255, 0.7); /* Sombra al pasar el mouse */
+    }
+    
+    /* Botones Generales */
+    /* Estilo general de botones */
+    button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #e3c6e9; /* Fondo púrpura claro */
+        color: white;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    
+    /* Efecto hover en botones */
+    button:hover {
+        background-color: #d1afd9;
+        transform: scale(1.05); /* Agranda ligeramente */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+    }
+    
+    /* Animations */
+    /* Animación para las transiciones */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px); /* Comienza más arriba */
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0); /* Termina en su posición original */
+        }
+    }
+    
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+header .menu a:hover {
+    color: #ffeaf5;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    background: linear-gradient(135deg, #ffe4f1, #f8d0f4);
+    color: #4a154b;
+    padding: 50px 20px;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('imagenes/accesorios-bg.jpg') no-repeat center;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero button {
+    background-color: #ff9dea;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero button:hover {
+    background-color: #ff70c9;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Productos */
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 30px;
+    animation: fadeIn 1s ease-in;
+}
+
+.tarjeta-contenedor {
+    perspective: 1200px;
+    width: 280px;
+    height: 360px;
+    cursor: pointer;
+}
+
+.tarjeta {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 0.8s ease-in-out;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.tarjeta:hover {
+    transform: rotateY(180deg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tarjeta-delantera,
+.tarjeta-trasera {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tarjeta-delantera {
+    background-color: white;
+    color: #4a154b;
+}
+
+.tarjeta-delantera img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-trasera {
+    background: linear-gradient(135deg, #e3c6e9, #ffeaf5);
+    transform: rotateY(180deg);
+    color: white;
+    padding: 25px;
+}
+
+.tarjeta-trasera h5 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #4a154b;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: linear-gradient(135deg, #d4a1d9, #ffeaf5);
+    color: white;
+    padding: 15px 0;
+    margin-top: 30px;
+    font-size: 1rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffe4fa;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.7);
+}
+
+/* Botones Generales */
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e3c6e9;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #d1afd9;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
