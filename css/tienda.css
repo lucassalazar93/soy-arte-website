@@ -1,471 +1,312 @@
 /* General */
+/* Configuración básica del cuerpo */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #ae00a8;
-    color: #8c008f7f;
-    line-height: 1.6;
-    scroll-behavior: smooth;
+    font-family: 'lora', serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #e663fd44 !important; /* Fondo rosa pastel */
+    color: #5d5d5d !important; /* Texto en gris suave */
+    line-height: 1.6 !important;
+    scroll-behavior: smooth !important; /* Movimiento suave al hacer scroll */
 }
 
 /* Header */
+/* Estilo del encabezado */
 header {
-    background: linear-gradient(135deg, #07c36b, #03b438);
-    animation: background-move 8s infinite alternate;
-    color: rgb(234, 18, 18);
-    text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #ffe4f1, #ffc1e3) !important; /* Fondo con gradiente pastel */
+    color: white !important;
+    text-align: center !important;
+    padding: 20px 0 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important; /* Sombra ligera */
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes background-move {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
+header .navbar {
+    background: transparent !important; /* Transparente para mostrar el gradiente del header */
+    padding: 10px 0; /* Más espacio para agrandar el navbar */
 }
 
-header .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    color: white;
-    letter-spacing: 1px;
-}
-
-header .menu a {
-    color: white;
-    margin: 0 15px;/* General Styles */
-    /* Configuración general del cuerpo: fuentes, colores y comportamiento de scroll */
-    body {
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #fff5fa; /* Fondo rosa claro */
-        color: #1d154b; /* Texto en un tono púrpura */
-        line-height: 1.6;
-        scroll-behavior: smooth; /* Movimiento suave al hacer scroll */
-    }
-    
-    /* Header Styles */
-    /* Estilo general del encabezado (header) */
-    header {
-        background: linear-gradient(135deg, #ffc1e3, #ff9dea); /* Gradiente de fondo */
-        animation: background-move 8s infinite alternate; /* Animación del gradiente */
-        color: white;
-        text-align: center;
-        padding: 20px 0; /* Espaciado superior e inferior */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra debajo del encabezado */
-    }
-    
-    /* Animación para mover el gradiente del encabezado */
-    @keyframes background-move {
-        0% {
-            background-position: 0% 50%;
-        }
-        100% {
-            background-position: 100% 50%;
-        }
-    }
-    
-    /* Estilo del logo dentro del encabezado */
-    header .logo {
-        font-family: 'Playfair Display', serif; /* Fuente elegante */
-        font-size: 2.8rem;
-        color: white; /* Color blanco para el logo */
-        letter-spacing: 1px; /* Espaciado entre letras */
-    }
-    
-    /* Enlaces dentro del menú del encabezado */
-    header .menu a {
-        color: white;
-        margin: 0 15px; /* Espaciado entre enlaces */
-        text-decoration: none;
-        font-weight: bold; /* Texto en negrita */
-        font-size: 1.1rem;
-        transition: color 0.3s ease; /* Transición suave en el color */
-    }
-    
-    /* Efecto hover para los enlaces del menú */
-    header .menu a:hover {
-        color: #ffeaf5; /* Color más claro al pasar el mouse */
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.9); /* Sombra al pasar el mouse */
-    }
-    
-    /* Hero Section */
-    /* Sección de introducción con estilo destacado */
-    .hero {
-        text-align: center; /* Centrar el contenido */
-        background: linear-gradient(135deg, #ffe4f1, #f8d0f4); /* Fondo degradado */
-        color: #912293b3; /* Texto púrpura */
-        padding: 50px 20px;
-        border-radius: 20px; /* Bordes redondeados */
-        margin: 20px auto;
-        max-width: 900px; /* Ancho máximo para limitar su tamaño */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
-        position: relative;
-        overflow: hidden; /* Ocultar contenido que sobresale */
-    }
-    
-    /* Fondo decorativo en la hero */
-    .hero:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('imagenes/accesorios-bg.jpg') no-repeat center; /* Imagen de fondo */
-        background-size: cover;
-        opacity: 0.1; /* Hacer la imagen translúcida */
-        z-index: -1;
-    }
-    
-    /* Título de la hero */
-    .hero h2 {
-        font-family: 'Playfair Display', serif; /* Fuente elegante */
-        font-size: 3rem;
-        margin-bottom: 15px;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra ligera */
-    }
-    
-    /* Botón en la hero */
-    .hero button {
-        background-color: #ff9dea; /* Fondo rosado */
-        color: white;
-        padding: 12px 25px;
-        border-radius: 30px; /* Bordes redondeados */
-        border: none;
-        font-size: 1.2rem;
-        cursor: pointer; /* Cambia el cursor al pasar */
-        transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
-    }
-    
-    /* Efecto hover en el botón */
-    .hero button:hover {
-        background-color: #ff70c9; /* Cambia a un color más oscuro */
-        transform: scale(1.1); /* Agranda ligeramente */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra al hacer hover */
-    }
-    
-    /* Productos Section */
-    /* Contenedor de las tarjetas de productos */
-    .productos {
-        display: flex;
-        flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas */
-        justify-content: center; /* Centrar los elementos */
-        padding: 20px;
-        gap: 30px; /* Espaciado entre tarjetas */
-        animation: fadeIn 1s ease-in; /* Animación de entrada */
-    }
-    
-    /* Contenedor para las tarjetas con efecto 3D */
-    .tarjeta-contenedor {
-        perspective: 1200px; /* Define la distancia de perspectiva */
-        width: 280px;
-        height: 360px;
-        cursor: pointer; /* Cambia el cursor al pasar */
-    }
-    
-    /* Estilo general de la tarjeta */
-    .tarjeta {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transform-style: preserve-3d; /* Habilita el efecto 3D */
-        transform: rotateY(0deg); /* Sin rotación inicial */
-        transition: transform 0.8s ease-in-out; /* Transición suave */
-        border-radius: 15px;
-        overflow: hidden;
-    }
-    
-    /* Efecto hover en la tarjeta */
-    .tarjeta:hover {
-        transform: rotateY(180deg); /* Rota 180 grados */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra al hacer hover */
-    }
-    
-    /* Estilo de las caras de la tarjeta */
-    .tarjeta-delantera,
-    .tarjeta-trasera {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden; /* Ocultar la cara trasera cuando está de frente */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-    
-    /* Cara delantera de la tarjeta */
-    .tarjeta-delantera {
-        background-color: white;
-        color: #4a154b;
-    }
-    
-    /* Imagen en la cara delantera */
-    .tarjeta-delantera img {
-        width: 100%;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-    }
-    
-    /* Cara trasera de la tarjeta */
-    .tarjeta-trasera {
-        background: linear-gradient(135deg, #e3c6e9, #ffeaf5);
-        transform: rotateY(180deg); /* Orientación inicial */
-        color: white;
-        padding: 25px;
-    }
-    
-    /* Footer Styles */
-    /* Estilo del pie de página */
-    footer {
-        text-align: center;
-        background: linear-gradient(135deg, #d4a1d9, #ffeaf5); /* Fondo con gradiente */
-        color: white;
-        padding: 15px 0;
-        margin-top: 30px;
-        font-size: 1rem;
-    }
-    
-    /* Estilo para los enlaces del footer */
-    footer a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
-    }
-    
-    /* Efecto hover en los enlaces del footer */
-    footer a:hover {
-        color: #ffe4fa; /* Color más claro */
-        text-shadow: 0 2px 4px rgba(255, 255, 255, 0.7); /* Sombra al pasar el mouse */
-    }
-    
-    /* Botones Generales */
-    /* Estilo general de botones */
-    button {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #e3c6e9; /* Fondo púrpura claro */
-        color: white;
-        border: none;
-        border-radius: 30px;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    
-    /* Efecto hover en botones */
-    button:hover {
-        background-color: #d1afd9;
-        transform: scale(1.05); /* Agranda ligeramente */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
-    }
-    
-    /* Animations */
-    /* Animación para las transiciones */
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(-20px); /* Comienza más arriba */
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0); /* Termina en su posición original */
-        }
-    }
-    
-    text-decoration: none;
+header .navbar-brand {
+    font-family: 'Playfair Display', serif; /* Fuente elegante */
+    font-size: 2.5rem; /* Tamaño más grande para destacar */
+    color: white !important;
     font-weight: bold;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-header .menu a:hover {
-    color: #ffeaf5;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+header .navbar-brand:hover {
+    color: #ffeaf5 !important; /* Color más claro al pasar el mouse */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9) !important; /* Efecto de brillo */
+    transform: scale(1.1); /* Agrandamiento al pasar el mouse */
 }
+
+header .navbar-nav .nav-link {
+    font-size: 1.2rem; /* Tamaño más grande para los enlaces */
+    font-weight: bold;
+    color: white !important;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header .navbar-nav .nav-link:hover {
+    color: #ffeaf5 !important; /* Color más claro al hover */
+    transform: scale(1.1); /* Efecto de agrandamiento */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Efecto de brillo */
+}
+
+header .navbar-toggler {
+    border: none; /* Sin bordes para el botón hamburguesa */
+    font-size: 1.5rem;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+header .navbar-toggler:hover {
+    transform: scale(1.1); /* Agrandamiento del botón hamburguesa */
+}
+
+/* Sombra ligera para destacar el navbar */
+.navbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 
 /* Hero Section */
 .hero {
-    text-align: center;
-    background: linear-gradient(135deg, #ffe4f1, #f8d0f4);
-    color: #4a154b;
-    padding: 50px 20px;
-    border-radius: 20px;
-    margin: 20px auto;
-    max-width: 900px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
+    text-align: center !important;
+    background: linear-gradient(135deg, #ffdee9, #ffc1e3) !important; /* Gradiente pastel */
+    color: #6c567b !important; /* Texto en morado suave */
+    padding: 50px 20px !important;
+    border-radius: 20px !important;
+    margin: 20px auto !important;
+    max-width: 900px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+    position: relative !important;
 }
 
-.hero:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('imagenes/accesorios-bg.jpg') no-repeat center;
-    background-size: cover;
-    opacity: 0.1;
-    z-index: -1;
-}
-
-.hero h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    margin-bottom: 15px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+.hero h1,
+.hero p {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
 }
 
 .hero button {
-    background-color: #ff9dea;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 30px;
-    border: none;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: #ff9dea !important; /* Fondo pastel */
+    color: white !important;
+    padding: 12px 25px !important;
+    border-radius: 30px !important;
+    border: none !important;
+    font-size: 1.2rem !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s ease, transform 0.2s ease !important;
 }
 
 .hero button:hover {
-    background-color: #ff70c9;
-    transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #f592d7 !important; /* Color más oscuro al hover */
+    transform: scale(1.1) !important; /* Efecto de agrandamiento */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Productos */
-.productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    gap: 30px;
-    animation: fadeIn 1s ease-in;
+/* Productos en Oferta */
+.productos-oferta {
+    margin-top: 40px !important;
+    padding: 20px !important;
+    background: linear-gradient(135deg, #c51570, #f2037e) !important; /* Fondo pastel */
+    border-radius: 15px !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important; /* Sombra ligera */
 }
 
-.tarjeta-contenedor {
-    perspective: 1200px;
-    width: 280px;
-    height: 360px;
-    cursor: pointer;
+.productos-oferta h2 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 2.5rem !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    color: #ff70c9 !important; /* Color llamativo */
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) !important;
 }
 
-.tarjeta {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transform: rotateY(0deg);
-    transition: transform 0.8s ease-in-out;
-    border-radius: 15px;
-    overflow: hidden;
+.productos-oferta .card {
+    border: none !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.3s, box-shadow 0.3s !important;
 }
 
-.tarjeta:hover {
-    transform: rotateY(180deg);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+.productos-oferta .card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
 }
 
-.tarjeta-delantera,
-.tarjeta-trasera {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.productos-oferta .btn {
+    display: block !important;
+    width: 100% !important;
+    border-radius: 20px !important;
+    background-color: #ff70c9 !important;
+    color: white !important;
+    font-weight: bold !important;
+    transition: background-color 0.3s ease, transform 0.2s ease !important;
 }
 
-.tarjeta-delantera {
-    background-color: white;
-    color: #4a154b;
+.productos-oferta .btn:hover {
+    background-color: #ff459b !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
-.tarjeta-delantera img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Sección de Reseñas */
+.reseñas {
+    margin: 40px auto !important;
+    padding: 20px !important;
+    background-color: #ffeaf0 !important; /* Fondo pastel */
+    border-radius: 10px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    max-width: 800px !important;
 }
 
-.tarjeta-trasera {
-    background: linear-gradient(135deg, #e3c6e9, #ffeaf5);
-    transform: rotateY(180deg);
-    color: white;
-    padding: 25px;
+.reseñas h2 {
+    font-size: 2rem !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    color: #333 !important;
 }
 
-.tarjeta-trasera h5 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #4a154b;
+.reseña {
+    padding: 10px !important;
+    margin-bottom: 10px !important;
+    border-bottom: 1px solid #ddd !important;
+}
+
+.reseña h3 {
+    font-size: 1.5rem !important;
+    color: #5d5d5d !important;
+}
+
+.reseña p {
+    color: #777 !important;
+    margin: 5px 0 !important;
+}
+
+.reseña small {
+    color: #bbb !important;
+}
+
+/* Formulario de Reseñas */
+.reseña-form {
+    margin: 20px auto !important;
+    background-color: #f9f9f9 !important;
+    padding: 20px !important;
+    border-radius: 10px !important;
+    max-width: 600px !important;
+}
+
+.reseña-form label {
+    display: block !important;
+    font-weight: bold !important;
+    margin-bottom: 5px !important;
+}
+
+.reseña-form input,
+.reseña-form select,
+.reseña-form textarea {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+    padding: 10px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 5px !important;
+}
+
+.reseña-form button {
+    display: block !important;
+    width: 100% !important;
+    background-color: #ff70c9 !important;
+    color: white !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+}
+
+.reseña-form button:hover {
+    background-color: #ff459b !important;
 }
 
 /* Footer */
 footer {
+    text-align: center !important;
+    background: linear-gradient(135deg, #ffd6eb, #ffc1e3) !important;
+    color: white !important;
+    padding: 15px 0 !important;
+    font-size: 1rem !important;
+}
+
+
+
+/* Modal Promocional */
+#promoModal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.promo-modal-content {
+    background-color: #fcd3ff; /* Fondo blanco */
+    padding: 30px; /* Mayor relleno */
+    border-radius: 15px; /* Bordes redondeados */
     text-align: center;
-    background: linear-gradient(135deg, #d4a1d9, #ffeaf5);
-    color: white;
-    padding: 15px 0;
-    margin-top: 30px;
-    font-size: 1rem;
+    width: 90%;
+    max-width: 400px; /* Tamaño máximo más reducido */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+    position: relative;
+    font-family: 'Poppins', sans-serif; /* Fuente estilizada */
 }
 
-footer a {
-    color: white;
-    text-decoration: none;
+.promo-modal-content h2 {
+    font-size: 1.8rem; /* Tamaño del título */
+    color: #d81b60; /* Color del título */
+    margin-bottom: 15px;
     font-weight: bold;
-    transition: color 0.3s ease;
 }
 
-footer a:hover {
-    color: #ffe4fa;
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.7);
+.promo-modal-content p {
+    font-size: 1rem; /* Tamaño del texto */
+    color: #555; /* Color gris para el texto */
+    margin-bottom: 20px; /* Separación con el botón */
+    line-height: 1.5;
 }
 
-/* Botones Generales */
-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #e3c6e9;
-    color: white;
+.promo-modal-content button {
+    background-color: #d81b60; /* Fondo del botón */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Más relleno */
     border: none;
-    border-radius: 30px;
+    border-radius: 20px; /* Bordes redondeados */
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-    background-color: #d1afd9;
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.promo-modal-content button:hover {
+    background-color: #c2185b; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Pequeño agrandamiento */
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.promo-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: #555;
+    cursor: pointer;
+}
+
+.promo-close:hover {
+    color: #d81b60; /* Color al pasar el mouse */
 }

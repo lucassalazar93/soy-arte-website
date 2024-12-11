@@ -362,7 +362,7 @@ $carrito_count = isset($_SESSION['carrito']) ? array_sum(array_column($_SESSION[
                         <div class="card-body">
                             <h5 class="card-title" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">PRODUCTO 1</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                            <a href="#" class="btn btn-primary">COMPRAR AHORA</a>
+                            <a href="tienda.php" class="btn btn-primary">COMPRAR AHORA</a>
                         </div>
                     </div>
                 </div>
@@ -374,7 +374,7 @@ $carrito_count = isset($_SESSION['carrito']) ? array_sum(array_column($_SESSION[
                         <div class="card-body">
                             <h5 class="card-title" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">PRODUCTO 2</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                            <a href="#" class="btn btn-primary">COMPRAR AHORA</a>
+                            <a href="tienda.php" class="btn btn-primary">COMPRAR AHORA</a>
                         </div>
                     </div>
                 </div>
@@ -386,7 +386,7 @@ $carrito_count = isset($_SESSION['carrito']) ? array_sum(array_column($_SESSION[
                         <div class="card-body">
                             <h5 class="card-title" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">PRODUCTO 3</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit..</p>
-                            <a href="#" class="btn btn-primary">COMPRAR AHORA</a>
+                            <a href="tienda.php" class="btn btn-primary">COMPRAR AHORA</a>
                         </div>
                     </div>
                 </div>
@@ -398,7 +398,7 @@ $carrito_count = isset($_SESSION['carrito']) ? array_sum(array_column($_SESSION[
                         <div class="card-body">
                             <h5 class="card-title" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">PRODUCTO 4</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <a href="#" class="btn btn-primary">COMPRAR AHORA</a>
+                            <a href="tienda.php" class="btn btn-primary">COMPRAR AHORA</a>
                         </div>
                     </div>
                 </div>
@@ -408,7 +408,7 @@ $carrito_count = isset($_SESSION['carrito']) ? array_sum(array_column($_SESSION[
         
 
         <div class="boton text-center">
-            <a href="https://www.youtube.com/watch?v=L_rTcQo8BUs">
+            <a href="http://localhost/soy-arte-website/tienda.php">
                 <img src="img/TIENDA.png" alt="boton">
             </a>
         </div>
