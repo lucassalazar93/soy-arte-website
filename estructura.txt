@@ -1,0 +1,214 @@
+Listado de rutas de carpetas para el volumen OS
+El número de serie del volumen es 5EC9-3349
+C:.
+¦   agregar_categoria.php
+¦   blog.html
+¦   carrito.php
+¦   config.php
+¦   dashboard.php
+¦   editar_producto.php
+¦   eliminar_producto.php
+¦   estructura.txt
+¦   footer.php
+¦   gestionar_inventario.php
+¦   index.php
+¦   inventario.php
+¦   login.html
+¦   login.php
+¦   logout.php
+¦   navbar.php
+¦   procesar_edicion.php
+¦   procesar_inventario.php
+¦   procesar_movimiento.php
+¦   procesar_resena_general.php
+¦   procesar_reseña.php
+¦   productos_mas_vendidos.php
+¦   README.md
+¦   register.html
+¦   register.php
+¦   reseñas_generales.php
+¦   test.html
+¦   test_connection.php
+¦   tienda.php
+¦   ver_movimientos.php
+¦   
++---css
+¦       blog.css
+¦       carrito.css
+¦       editar_producto.css
+¦       estilos.css
+¦       inventario.css
+¦       tienda.css
+¦       
++---img
+    ¦   1abddd19e994cd7f133d015144ab0644.jpg
+    ¦   90a5dadf2c54a1e6faaf4046cc6150a9.jpg
+    ¦   A4 horizontal collage familia beige.png
+    ¦   acido.png
+    ¦   adiddas.jpg
+    ¦   ansiedad.png
+    ¦   atardecer.png
+    ¦   autoestima.png
+    ¦   background.jpg.png
+    ¦   banner (1).png
+    ¦   banner (2).png
+    ¦   banner (3).png
+    ¦   banner (4).png
+    ¦   banner (5).png
+    ¦   banner (6).png
+    ¦   banner (7).png
+    ¦   banner (8).png
+    ¦   bebedero-gatuno.jpg
+    ¦   blanca.png
+    ¦   blog.png
+    ¦   blusa SoyArte.jpg
+    ¦   blusa-dama.jpg
+    ¦   blusa-floral.jpg
+    ¦   blusa-top.jpg
+    ¦   botas-neon.jpg
+    ¦   boton neon.png
+    ¦   boton12.png
+    ¦   botones-1.png
+    ¦   botones-2.png
+    ¦   botones123.png
+    ¦   botones325.png
+    ¦   botones34.png
+    ¦   burb.png
+    ¦   burbuja1.png
+    ¦   burbuja2.png
+    ¦   burbuja3.png
+    ¦   cama-banano-gato.jpg
+    ¦   cargador-de-mascotas.jpg
+    ¦   carrito.png
+    ¦   ccce85820d1c5ab5ca4c3eb8d0ef2b42.jpg
+    ¦   chunky.jpg
+    ¦   collar-estrella-de-mar.jpg
+    ¦   collar-oro-rosa.jpg
+    ¦   collar-perlas.jpg
+    ¦   comid1.png
+    ¦   comid2.png
+    ¦   comid3.png
+    ¦   comida saludable.png
+    ¦   comida1.png
+    ¦   comida2.png
+    ¦   comida3.png
+    ¦   comida4.png
+    ¦   comida5.png
+    ¦   corazon.png
+    ¦   Corazones_malheridos.webp
+    ¦   depresion.png
+    ¦   desc-1.png
+    ¦   desc-2.png
+    ¦   desc-3.png
+    ¦   descuento.png
+    ¦   Diseño sin título (2).gif
+    ¦   Diseño sin título (39).png
+    ¦   Diseño sin título (6).jpg
+    ¦   en busqueda de la felicidad.jpg
+    ¦   estres 2.png
+    ¦   estres.png
+    ¦   flecha.png
+    ¦   flechas.png
+    ¦   flor de loto.png
+    ¦   flor1.png
+    ¦   flor1.psd
+    ¦   flor2.png
+    ¦   flor3.png
+    ¦   flores1254.png
+    ¦   foto-1.png
+    ¦   foto-2.png
+    ¦   foto-3.png
+    ¦   foto-4.png
+    ¦   hijos alimentacion.png
+    ¦   img-1.png
+    ¦   img-2.png
+    ¦   img-3.png
+    ¦   img-4.psd
+    ¦   IMG_2226.JPEG
+    ¦   IMG_2334.JPEG
+    ¦   IMG_3171.MP4
+    ¦   IMG_3291.JPEG
+    ¦   IMG_8947.JPEG
+    ¦   inicio.png
+    ¦   juego-esmeraldas.jpg
+    ¦   juguete-para-perro.jpg
+    ¦   la vida es bella.jpg
+    ¦   lirio (1).png
+    ¦   lirio (11).png
+    ¦   lirio (12).png
+    ¦   lirio (13).png
+    ¦   lirio (14).png
+    ¦   lirio (15).png
+    ¦   lirio (16).png
+    ¦   lirio (2).png
+    ¦   lirio (3).png
+    ¦   lirio (4).png
+    ¦   lirio (5).png
+    ¦   lirio (6).png
+    ¦   lirio (7).png
+    ¦   lirio (8).png
+    ¦   lirio (9).png
+    ¦   lirio23.png
+    ¦   Logo_Morado sin litras.psd
+    ¦   Logo_Morado.png
+    ¦   luz.png
+    ¦   mujer flor de loto.png
+    ¦   mujeres.png
+    ¦   negra.png
+    ¦   neon.png
+    ¦   Neutral Earthy Minimalist Still Life Photography Photo Collage.png
+    ¦   nike.jpg
+    ¦   nore1.png
+    ¦   nore2.png
+    ¦   outfit niña americano.jpg
+    ¦   outfit niña california.jpg
+    ¦   pandora.jpg
+    ¦   perfil (1).png
+    ¦   perfil (2).png
+    ¦   perfil (3).png
+    ¦   perfil (4).png
+    ¦   perro 4.jpg
+    ¦   pijama-corazon.jpg
+    ¦   pijama-love.jpg
+    ¦   pijama-tow.jpg
+    ¦   pijama-vestido.jpg
+    ¦   postres.png
+    ¦   prod-1.png
+    ¦   prod-2.png
+    ¦   prod-3.png
+    ¦   producto4.png
+    ¦   pulsera oro bebe.jpg
+    ¦   senos.png
+    ¦   SOY ARTE COLOR.pdf
+    ¦   tennis-japones.jpg
+    ¦   TIENDA.png
+    ¦   valiente.png
+    ¦   Video de Post Para Instagram Mujeres Rosa.mp4
+    ¦   
+    +---imagenes-tienda
+            adiddas.jpg
+            bebedero-gatuno.jpg
+            blusa SoyArte.jpg
+            blusa-dama.jpg
+            blusa-floral.jpg
+            blusa-top.jpg
+            botas-neon.jpg
+            cama-banano-gato.jpg
+            cargador-de-mascotas.jpg
+            ccce85820d1c5ab5ca4c3eb8d0ef2b42.jpg
+            chunky.jpg
+            collar-estrella-de-mar.jpg
+            collar-oro-rosa.jpg
+            collar-perlas.jpg
+            juego-esmeraldas.jpg
+            juguete-para-perro.jpg
+            nike.jpg
+            outfit niña americano.jpg
+            outfit niña california.jpg
+            pandora.jpg
+            pijama-corazon.jpg
+            pijama-love.jpg
+            pijama-tow.jpg
+            pijama-vestido.jpg
+            tennis-japones.jpg
+            

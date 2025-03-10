@@ -1,106 +1,215 @@
-/* Estilo General */
+/* 🔹 General */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #fdf6fb;
-    color: #5d5d5d;
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    background-color: #f9ede2; /* Fondo suave pastel */
+    color: #3D3D3D; /* Texto oscuro para contraste */
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Navbar */
-nav.bg-gradient {
-    background: linear-gradient(135deg, #ffc1e3, #ff9dea);
-}
-
-nav .navbar-brand {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #fff !important;
-}
-
-nav .nav-link {
-    color: #fff !important;
-    font-weight: 600;
-}
-
-nav .nav-link:hover {
-    color: #ffeaf5 !important;
-}
-
-/* Hero Section */
-.hero-section {
-    background: linear-gradient(135deg, #ffe4f1, #ffc1e3);
-    text-align: center;
-    padding: 50px 20px;
+/* 🔹 Encabezado */
+header {
+    background: linear-gradient(to right, #C7AAD9, #ECBDF2);
     color: white;
-    border-radius: 10px;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.hero-section h1 {
-    font-family: 'Playfair Display', serif;
+/* 🔹 Título con más profundidad */
+header h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+/* 🔹 Subtítulo */
+header p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    font-weight: 500;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* 🚀 Banner en Cascada (Asegura que las imágenes cubran todo el espacio) */
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Ajusta según lo necesites */
+    overflow: hidden;
+    background: #EFD8F2; /* Color de fondo en caso de que la imagen tarde en cargar */
+}
+
+.banner-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen se ajusta sin distorsionarse */
+    object-position: center; /* Centra la imagen */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Activa la imagen visible */
+.banner-slide.active {
+    opacity: 1;
+}
+
+
+/* 📌 Título del Blog Centrado */
+.banner-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
     font-size: 3rem;
-    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
 }
 
-.hero-section .btn {
-    background-color: #ff70c9;
-    border: none;
-    border-radius: 30px;
+.banner-subtitle {
+    font-size: 1.5rem;
+    font-weight: normal;
 }
 
-.hero-section .btn:hover {
-    background-color: #ff459b;
+/* 🔹 Estilos para las tarjetas de artículos */
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    background: #ECBDF2;
+    color: #3D3D3D;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-/* Blog Post */
-.blog-post img {
-    max-height: 250px;
+/* ✨ Efecto hover para tarjetas */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* 💫 Efecto de brillo en la imagen */
+.card-img-top {
+    height: 200px;
     object-fit: cover;
+    transition: transform 0.4s ease-in-out;
 }
 
-.blog-post h2 {
-    font-size: 1.8rem;
-    color: #333;
+.card:hover .card-img-top {
+    transform: scale(1.05);
 }
 
-.blog-post a {
-    color: #ff70c9;
+/* 📌 Sección de la barra lateral */
+aside {
+    text-align: center;
+    padding: 15px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.blog-post a:hover {
-    text-decoration: underline;
+/* 📌 Imagen con borde elegante */
+aside img {
+    width: 80%;
+    max-width: 200px;
+    border-radius: 50%;
+    border: 5px solid #C7AAD9;
+    transition: transform 0.3s ease-in-out;
 }
 
-
-/* Intro Section */
-.intro-section {
-    background-color: #fff;
-    padding: 50px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+aside img:hover {
+    transform: scale(1.1);
 }
 
-.intro-section .section-title {
-    color: #6c63ff;
+aside h4 {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.intro-section h1 {
-    font-size: 2.5rem;
-    color: #343a40;
-    margin-bottom: 20px;
-}
-
-.intro-section p {
-    color: #5a5a5a;
-}
-
-.intro-section .btn-primary {
-    background-color: #6c63ff;
+/* 🔘 Botones con efecto 3D */
+.btn-primary, .btn-success {
+    background: linear-gradient(to right, #C7AAD9, #ECBDF2);
     border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
+    color: white;
+    padding: 10px 15px;
     font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.intro-section .btn-primary:hover {
-    background-color: #4c47c8;
+.btn-primary:hover, .btn-success:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 🎨 Modo Oscuro */
+body.dark-mode {
+    background-color: #1D1D1D;
+    color: white;
+}
+
+.dark-mode .card {
+    background-color: #C7AAD9;
+    color: white;
+    border: 1px solid #ECBDF2;
+}
+
+.dark-mode .navbar, .dark-mode .bg-primary {
+    background-color: #EFD8F2 !important;
+}
+
+.dark-mode .btn-primary {
+    background-color: #C7AAD9;
+    border-color: #ECBDF2;
+}
+
+/* 🔘 Botón flotante de modo oscuro */
+#toggle-theme {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #C7AAD9;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background 0.3s;
+    z-index: 1000;
+}
+
+#toggle-theme:hover {
+    background: #ECBDF2;
+    transform: scale(1.1);
+}
+
+/* 🔹 Footer */
+footer {
+    background: #C7AAD9;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🌟 ANIMACIONES */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

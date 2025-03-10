@@ -41,6 +41,10 @@ echo '</pre>';
 
         <!-- Botón de cierre de sesión -->
         <a href="logout.php" class="btn btn-custom">Cerrar Sesión</a>
+
+                <!-- adminstracion del blog -->
+        <a href="admin.php" class="btn btn-success">Administrar Blog</a>
+
     </div>
 </body>
 </html>

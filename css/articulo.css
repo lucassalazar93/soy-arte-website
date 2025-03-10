@@ -1,0 +1,188 @@
+/* 🔹 General */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9ede2;
+    color: #3D3D3D;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 🔹 ENCABEZADO DEL ARTÍCULO */
+.article-header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(to right, #C7AAD9, #ECBDF2);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.article-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.article-header .author {
+    font-size: 1.2rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* 🔹 Separador */
+.separator {
+    width: 80px;
+    height: 4px;
+    background: white;
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* 🔹 IMAGEN PRINCIPAL: Tamaño controlado */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.img-fluid:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 CONTENIDO DEL ARTÍCULO */
+article {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    opacity: 1;
+}
+
+/* 🔹 VIDEOS & AUDIOS */
+video, audio, iframe {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 COMENTARIOS */
+.comment-section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+/* 🔹 CAJA DE COMENTARIO */
+.comment-box {
+    border: 1px solid #C7AAD9;
+    padding: 15px;
+    border-radius: 10px;
+    background: #F5F5F5;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comment-box strong {
+    color: #6a11cb;
+}
+
+.comment-box small {
+    color: #757575;
+}
+
+/* 🔹 BOTONES */
+.btn-primary {
+    background: linear-gradient(to right, #C7AAD9, #ECBDF2);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 🎨 MODO OSCURO */
+body.dark-mode {
+    background-color: #1D1D1D;
+    color: white;
+}
+
+.dark-mode .article-header {
+    background: linear-gradient(to right, #654ea3, #eaafc8);
+}
+
+.dark-mode .comment-section,
+.dark-mode .comment-box,
+.dark-mode article {
+    background-color: #2C2C2C;
+    color: white;
+    border: 1px solid #654ea3;
+}
+
+.dark-mode .btn-primary {
+    background: #654ea3;
+    border-color: #eaafc8;
+}
+
+/* 🔘 BOTÓN DE MODO OSCURO */
+#toggle-theme {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #C7AAD9;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background 0.3s;
+    z-index: 1000;
+}
+
+#toggle-theme:hover {
+    background: #ECBDF2;
+    transform: scale(1.1);
+}
+
+/* 🔹 FOOTER */
+footer {
+    background: #C7AAD9;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🌟 ANIMACIONES */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

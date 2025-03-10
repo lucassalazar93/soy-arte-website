@@ -1,0 +1,79 @@
+/* ======== Estilos Generales ======== */
+body {
+    background-color: #f4f6f9;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ======== Contenedor ======== */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(110, 110, 110, 0.1);
+}
+
+/* ======== Estilos del Formulario ======== */
+h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #4f4f4f;
+}
+
+input, textarea {
+    border-radius: 6px;
+}
+
+/* ======== Botones ======== */
+.btn-primary {
+    background: #4CAF50;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #45a049;
+}
+
+/* ======== Tabla de Artículos ======== */
+.table {
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead {
+    background: #4CAF50;
+    color: white;
+}
+
+.table img {
+    border-radius: 6px;
+}
+
+/* ======== Botones de Acción ======== */
+.btn-warning {
+    background: #FF9800;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-warning:hover {
+    background: #e68900;
+}
+
+.btn-danger {
+    background: #E53935;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-danger:hover {
+    background: #c62828;
+}
