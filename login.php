@@ -3,46 +3,56 @@ session_start();
 require 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Sanitizar entrada de datos
-    $email = trim($_POST['email']); // Elimina espacios al inicio y final
+    $email = trim($_POST['email']);
     $password = $_POST['password'];
 
     if (!empty($email) && !empty($password)) {
-        // Usar prepared statements para evitar inyección SQL
-        $sql = "SELECT * FROM usuarios WHERE email = ?";
-        $stmt = $conn->prepare($sql);
+        // Primero busca en la tabla de administradores
+        $sqlAdmin = "SELECT * FROM administradores WHERE email = ?";
+        $stmt = $conn->prepare($sqlAdmin);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-        if ($stmt) {
+        if ($result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            $userType = 'admin';
+        } else {
+            // Si no está en administradores, busca en usuarios
+            $sqlUser = "SELECT * FROM usuarios WHERE email = ?";
+            $stmt = $conn->prepare($sqlUser);
             $stmt->bind_param("s", $email);
             $stmt->execute();
             $result = $stmt->get_result();
 
             if ($result->num_rows > 0) {
                 $user = $result->fetch_assoc();
-
-                // Verificar la contraseña
-                if (password_verify($password, $user['contraseña'])) {
-                    // Autenticación exitosa
-                    $_SESSION['user_id'] = $user['User_id'];
-                    $_SESSION['nombre_completo'] = !empty($user['nombre_completo']) ? $user['nombre_completo'] : 'Usuario'; // Valor predeterminado si está vacío
-                    $_SESSION['fecha_registro'] = !empty($user['fecha_registro']) ? $user['fecha_registro'] : 'Fecha desconocida';
-
-                    // Redirigir al dashboard
-                    header("Location: dashboard.php");
-                    exit();
-                } else {
-                    // Contraseña incorrecta
-                    echo "<script>alert('Contraseña incorrecta. Inténtalo de nuevo.');</script>";
-                }
+                $userType = 'usuario';
             } else {
-                // Usuario no encontrado
                 echo "<script>alert('No se encontró una cuenta con ese email.');</script>";
+                exit();
             }
-
-            $stmt->close();
-        } else {
-            echo "<script>alert('Error en la consulta. Inténtalo más tarde.');</script>";
         }
+
+        // 🔹 Cambiar 'contraseña' por 'password'
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['nombre_completo'] = $user['nombre_completo'];
+            $_SESSION['rol'] = $user['rol'];
+            $_SESSION['userType'] = $userType;
+
+            // Redirigir según el tipo de usuario
+            if ($userType === 'admin') {
+                header("Location: admin_dashboard.php");
+            } else {
+                header("Location: dashboard.php");
+            }
+            exit();
+        } else {
+            echo "<script>alert('Contraseña incorrecta. Inténtalo de nuevo.');</script>";
+        }
+
+        $stmt->close();
     } else {
         echo "<script>alert('Por favor, complete todos los campos.');</script>";
     }

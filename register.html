@@ -6,6 +6,13 @@
     <title>Registro</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script>
+        function toggleAdminCode() {
+            var rol = document.getElementById("rol").value;
+            var adminCodeField = document.getElementById("admin_code_field");
+            adminCodeField.style.display = (rol === "admin") ? "block" : "none";
+        }
+    </script>
 </head>
 <body>
     <div class="background-image"><img src="img/mujer flor de loto.png" alt=""></div>
@@ -26,28 +33,23 @@
                         <input type="text" class="form-control" id="full_name" name="full_name" required>
                     </div>
                     <div class="form-group text-center">
-                        <label for="id_number" class="label-centered">Cédula</label>
-                        <input type="text" class="form-control" id="id_number" name="id_number" required>
-                    </div>
-                    <div class="form-group text-center">
                         <label for="email" class="label-centered">Email</label>
                         <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="form-group text-center">
-                        <label class="label-centered">Fecha de Nacimiento</label>
-                        <div class="dob-container">
-                            <input type="text" class="form-control" id="dob_day" name="dob_day" placeholder="DD" required>
-                            <input type="text" class="form-control" id="dob_month" name="dob_month" placeholder="MM" required>
-                            <input type="text" class="form-control" id="dob_year" name="dob_year" placeholder="AA" required>
-                        </div>
                     </div>
                     <div class="form-group text-center">
                         <label for="password" class="label-centered">Contraseña</label>
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
                     <div class="form-group text-center">
-                        <label for="confirm_password" class="label-centered">Confirmar Contraseña</label>
-                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                        <label for="rol" class="label-centered">Tipo de Cuenta</label>
+                        <select class="form-control" id="rol" name="rol" onchange="toggleAdminCode()">
+                            <option value="usuario">Usuario</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+                    </div>
+                    <div class="form-group text-center" id="admin_code_field" style="display: none;">
+                        <label for="admin_code" class="label-centered">Código de Administrador</label>
+                        <input type="password" class="form-control" id="admin_code" name="admin_code">
                     </div>
                     <button type="submit" class="btn btn-custom btn-block">Registrar</button>
                 </form>
