@@ -2,9 +2,24 @@ const express = require("express");
 const router = express.Router();
 const db = require("../config/db");
 
-// 🚀 **Obtener todas las recetas**
+// ===============================================
+// 📅 1. Obtener todas las recetas (versión resumida)
+// ===============================================
 router.get("/", (req, res) => {
-  db.query("SELECT * FROM recetas", (err, results) => {
+  const sql = `
+    SELECT 
+      id,
+      titulo AS title,
+      descripcion AS description,
+      imagen AS image,
+      tiempo_preparacion AS time,
+      nivel_dificultad AS level,
+      autor,
+      calificacion AS rating,
+      categoria
+    FROM recetas
+  `;
+  db.query(sql, (err, results) => {
     if (err) {
       console.error("❌ Error al obtener recetas:", err);
       return res.status(500).json({ error: "Error en el servidor" });
@@ -13,9 +28,29 @@ router.get("/", (req, res) => {
   });
 });
 
-// 🚀 **Obtener una receta por ID**
+// =================================================
+// 📘 2. Obtener una receta por ID (detalle completo)
+// =================================================
 router.get("/:id", (req, res) => {
-  db.query("SELECT * FROM recetas WHERE id = ?", [req.params.id], (err, result) => {
+  const sql = `
+    SELECT 
+      id,
+      titulo AS title,
+      descripcion AS description,
+      descripcion_larga,
+      imagen AS image,
+      tiempo_preparacion AS time,
+      nivel_dificultad AS level,
+      autor,
+      calificacion AS rating,
+      video,
+      audio,
+      link_youtube,
+      ingredientes
+    FROM recetas
+    WHERE id = ?
+  `;
+  db.query(sql, [req.params.id], (err, result) => {
     if (err) {
       console.error("❌ Error al obtener la receta:", err);
       return res.status(500).json({ error: "Error en el servidor" });
@@ -27,12 +62,40 @@ router.get("/:id", (req, res) => {
   });
 });
 
-// 🚀 **Crear una nueva receta**
+// ==================================
+// 🌟 3. Crear una nueva receta
+// ==================================
 router.post("/", (req, res) => {
-  const { nombre, descripcion, imagen, video, audio, link_youtube } = req.body;
-  const sql = "INSERT INTO recetas (nombre, descripcion, imagen, video, audio, link_youtube) VALUES (?, ?, ?, ?, ?, ?)";
+  const { 
+    titulo, 
+    descripcion, 
+    descripcion_larga, 
+    imagen, 
+    tiempo_preparacion, 
+    nivel_dificultad, 
+    autor, 
+    calificacion, 
+    video, 
+    audio, 
+    link_youtube,
+    categoria,
+    ingredientes
+  } = req.body;
 
-  db.query(sql, [nombre, descripcion, imagen, video, audio, link_youtube], (err, result) => {
+  const sql = `
+    INSERT INTO recetas (
+      titulo, descripcion, descripcion_larga, imagen, 
+      tiempo_preparacion, nivel_dificultad, autor, 
+      calificacion, video, audio, link_youtube, categoria, ingredientes
+    )
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `;
+
+  db.query(sql, [
+    titulo, descripcion, descripcion_larga, imagen,
+    tiempo_preparacion, nivel_dificultad, autor,
+    calificacion, video, audio, link_youtube, categoria, ingredientes
+  ], (err, result) => {
     if (err) {
       console.error("❌ Error al insertar receta:", err);
       return res.status(500).json({ error: "Error en el servidor" });
@@ -41,12 +104,49 @@ router.post("/", (req, res) => {
   });
 });
 
-// 🚀 **Actualizar una receta**
+// ==================================
+// ✏️ 4. Actualizar una receta existente
+// ==================================
 router.put("/:id", (req, res) => {
-  const { nombre, descripcion, imagen, video, audio, link_youtube } = req.body;
-  const sql = "UPDATE recetas SET nombre=?, descripcion=?, imagen=?, video=?, audio=?, link_youtube=? WHERE id=?";
+  const { 
+    titulo, 
+    descripcion, 
+    descripcion_larga, 
+    imagen, 
+    tiempo_preparacion, 
+    nivel_dificultad, 
+    autor, 
+    calificacion, 
+    video, 
+    audio, 
+    link_youtube,
+    categoria,
+    ingredientes
+  } = req.body;
 
-  db.query(sql, [nombre, descripcion, imagen, video, audio, link_youtube, req.params.id], (err, result) => {
+  const sql = `
+    UPDATE recetas SET 
+      titulo = ?, 
+      descripcion = ?, 
+      descripcion_larga = ?, 
+      imagen = ?, 
+      tiempo_preparacion = ?, 
+      nivel_dificultad = ?, 
+      autor = ?, 
+      calificacion = ?, 
+      video = ?, 
+      audio = ?, 
+      link_youtube = ?, 
+      categoria = ?,
+      ingredientes = ?
+    WHERE id = ?
+  `;
+
+  db.query(sql, [
+    titulo, descripcion, descripcion_larga, imagen,
+    tiempo_preparacion, nivel_dificultad, autor,
+    calificacion, video, audio, link_youtube, categoria, ingredientes, req.params.id
+  ], (err, result) => {
     if (err) {
       console.error("❌ Error al actualizar receta:", err);
       return res.status(500).json({ error: "Error en el servidor" });
@@ -55,7 +155,9 @@ router.put("/:id", (req, res) => {
   });
 });
 
-// 🚀 **Eliminar una receta**
+// ==================================
+// 🗑️ 5. Eliminar una receta
+// ==================================
 router.delete("/:id", (req, res) => {
   db.query("DELETE FROM recetas WHERE id = ?", [req.params.id], (err, result) => {
     if (err) {

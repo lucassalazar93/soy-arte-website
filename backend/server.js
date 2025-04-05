@@ -12,11 +12,15 @@ app.use(cors()); // Permite peticiones desde otros dominios
 app.use(express.json()); // Permite leer JSON en el body de peticiones
 
 // 📦 Importar rutas
-app.use("/api/admin", require("./routes/admin.routes")); // Rutas de administrador
-app.use("/productos", require("./routes/productos.routes")); // ✅ Ruta para productos
-// También podrías desglosarlo como:
-// const productosRoutes = require("./routes/productos.routes");
-// app.use("/productos", productosRoutes);
+const adminRoutes = require("./routes/admin.routes");
+const productosRoutes = require("./routes/productos.routes");
+// Si más adelante agregas rutas como recetas:
+const recetasRoutes = require("./routes/recetas.routes");
+
+// ✅ Usar rutas
+app.use("/api/admin", adminRoutes); // Rutas de administrador
+app.use("/productos", productosRoutes); // Rutas de productos
+app.use("/api/recetas", recetasRoutes); // (opcional) Rutas de recetas
 
 // ✅ Verificar conexión a la BD al iniciar
 db.query("SELECT 1", (err) => {
